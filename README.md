@@ -33,9 +33,27 @@ Implement the screens from this Figma file:
 ### ✅ What you need to do
 
 1. **Clone** this project to your machine.
-2. **Run** the project and make sure it builds and launches.
-3. **Download the assets** from the Figma file (icons, images, etc.) and add them to the project.
+2. **Run** the project and make sure it builds and launches (see [Running the App](#running-the-app)).
+3. **Download the assets** from the Figma file (icons, images, etc.) and add them under `assets/` (register them in `pubspec.yaml`).
 4. Implement the design as closely as possible within the time limit.
+
+### 🟢 The project is ready to run — no setup required
+
+To save you time, everything that normally needs manual setup has **already been done and committed** for you:
+
+- ✅ The `env/` folder with `.env.development`, `.env.staging`, and `.env.production` is included.
+- ✅ All generated code (`*.g.dart` — envied, Hive adapters, etc.) is included.
+
+So you **do not** need to create env files or run `build_runner` — just clone, `flutter pub get`, and run.
+
+```bash
+git clone git@github-arham:Arhamss/codeable_flutter_test.git
+cd codeable_flutter_test
+flutter pub get
+flutter run --target lib/main_development.dart
+```
+
+> ℹ️ **Note:** The `env/` files and `*.g.dart` files are normally gitignored. They were committed **as an exception** so the project runs out of the box. They contain only placeholder values — no real secrets.
 
 Good luck! 🚀
 
@@ -212,7 +230,9 @@ Each flavor configures:
 
 Environment variables are managed with the [`envied`](https://pub.dev/packages/envied) package for compile-time injection with obfuscation support.
 
-**1. `.env` files** — located in a gitignored `env/` folder at the project root:
+> 📌 **For this assessment these env files and the generated `*.g.dart` files are already committed** — you can skip this section and just run the app. It's documented here so you understand how config works.
+
+**1. `.env` files** — located in a normally-gitignored `env/` folder at the project root:
 
 ```
 env/
